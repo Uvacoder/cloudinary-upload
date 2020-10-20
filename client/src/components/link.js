@@ -1,11 +1,16 @@
 import React from "react";
 import './link.css';
 
-function Link(props) {
+function Link({URL}) {
   return (
     <div>
       <h1>your link is here</h1>
-      <input value={props.data||"wait while link generates"} />
+      <p>
+        {
+          URL || "wait while link generates"
+        }
+      </p>
+      {URL !== null ? <img src={URL} alt="uploaded image" style={{maxWidth: "200px", maxHeight:"200px", objectFit: "contain"}}/>  : null}
     </div>
   );
 }

@@ -3,15 +3,14 @@ import axios from "axios";
 import "./upload.css";
 import "./submit.css";
 
-function UploadButton() {
-  const [imageSelected, setImage] = useState(null);
 
+function UploadButton({setURL}) {
+  const [imageSelected, setImage] = useState(null);
   async function uploadImage() {
     const payload = new FormData();
     payload.append("image", imageSelected);
     console.log("uploading image....");
-    const res = await axios.post("http://localhost:4444/", payload);
-    console.log(res.data);
+    await axios.post("http://localhost:4444/", payload).then(res => setURL(res.data.file.url));
   }
 
   return (
