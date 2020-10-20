@@ -6,7 +6,7 @@ function Link({URL}) {
     <div>
       <h1>your link is here</h1>
       {
-        URL ? <a href={URL}>{URL}</a> || "wait while link generates"
+        URL ? <a href={URL}>{URL}</a> : "wait while link generates"
       }
       {URL !== null ? <img src={URL} alt="uploaded image" style={{maxWidth: "200px", maxHeight:"200px", objectFit: "contain"}}/>  : null}
     </div>
