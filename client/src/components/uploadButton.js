@@ -4,12 +4,12 @@ import "./upload.css";
 import "./submit.css";
 
 
-function UploadButton({setURL}) {
+function UploadButton({setURL, setSelected}) {
   const [imageSelected, setImage] = useState(null);
   async function uploadImage() {
+    setSelected(true);
     const payload = new FormData();
     payload.append("image", imageSelected);
-    console.log("uploading image....");
     await axios.post("http://localhost:4444/", payload).then(res => setURL(res.data.file.url));
   }
 
