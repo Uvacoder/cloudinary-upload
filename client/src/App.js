@@ -1,16 +1,15 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import UploadButton from "./components/uploadButton";
-import Link from "./components/link";
 import "./App.css";
+import Link from"./components/link";
 
 function App() {
-
-    const [URL, setURL] = useState(null);
-
+  const [URL, setURL] = useState(null);
+  const [isSelected, setSelected] = useState(false);
   return (
     <div className="App">
-      <UploadButton setURL={setURL} />
-      <Link URL={URL}/>
+      <UploadButton setURL={setURL} setSelected={setSelected}/>
+      <Link URL={URL} isSelected={isSelected}/>
     </div>
   );
 }
