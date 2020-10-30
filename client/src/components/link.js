@@ -15,7 +15,7 @@ function Link({ URL, isSelected }) {
   return (
     <div>
       <h1>your link is here</h1>
-      {URL ? <a href={URL}>{URL}</a> : "wait while link generates"}
+      {URL ? <a className="urlLink" href={URL}>{URL}</a> : "wait while link generates"}
       {(!URL && isSelected) && <Loader /> }
       {URL && (
         <button className="copy-btn" onClick={() => copyToClipboard()}>
